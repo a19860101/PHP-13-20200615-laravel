@@ -1,5 +1,7 @@
 @extends('template.master')
-
+@section('page-title')
+<title>Laravel-Blog---新增文章</title>
+@endsection
 @section('main')
 <div class="container">
     <div class="row">
