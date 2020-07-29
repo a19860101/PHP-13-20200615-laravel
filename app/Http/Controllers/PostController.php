@@ -39,9 +39,11 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
-        DB::insert("INSERT INTO posts(title,content)VALUES(?,?)",[
+        DB::insert("INSERT INTO posts(title,content,created_at,updated_at)VALUES(?,?,?,?)",[
             $request->title,
-            $request->content
+            $request->content,
+            now(),
+            now()
         ]);   
         return "success";
     }
