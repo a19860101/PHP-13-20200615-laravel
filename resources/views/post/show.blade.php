@@ -17,6 +17,12 @@
             <div>
                 最後更新時間:{{$post->updated_at}}
             </div>
+            <a href="/post" class="btn btn-primary">回上頁</a>
+            <form action="{{route('post.destroy',['id'=>$post->id])}}" method="post" class="d-inline-block">
+                @csrf
+                @method('delete')
+                <input type="submit" class="btn btn-danger" value="刪除">
+            </form>
         </div>
         @endforeach
     </div>
