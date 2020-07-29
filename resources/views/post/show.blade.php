@@ -5,7 +5,6 @@
 @section('main')
 <div class="container">
     <div class="row">
-        @foreach($posts as $post)
         <div class="col-12">
             <h2>{{$post->title}}</h2>
             <div>
@@ -25,7 +24,6 @@
             </form>
             <a href="{{route('post.edit',['id'=>$post->id])}}" class="btn btn-info">編輯</a>
         </div>
-        @endforeach
     </div>
 </div>
 @endsection

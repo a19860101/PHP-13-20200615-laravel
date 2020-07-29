@@ -50,6 +50,9 @@ class PostController extends Controller
     public function show($id)
     {
         //
+        // $post = DB::table('posts')->where('id',$id)->first();
+        $post = DB::table('posts')->find($id);
+        return view('post.show',compact('post'));
     }
 
     /**
