@@ -6,7 +6,6 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            @foreach($posts as $post)
             <form action="{{route('post.update',['id'=>$post->id])}}" method="post">
                 @csrf
                 @method('put')
@@ -21,7 +20,6 @@
                 <input type="submit" class="btn btn-primary" value="儲存">
                 <input type="button" class="btn btn-danger" value="取消" onclick="history.back()">
             </form>
-            @endforeach
         </div>
     </div>
 </div>
