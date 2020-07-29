@@ -16,7 +16,7 @@ class PostController extends Controller
     public function index()
     {
         //
-        $posts = DB::select("SELECT * FROM posts");
+        $posts = DB::select("SELECT * FROM posts ORDER BY id DESC");
         return view('post.index',compact('posts'));
     }
 
@@ -86,6 +86,13 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         //
+        DB::update('UPDATE posts SET title=?,content=?,updated_at=? WHERE id=?',[
+            $request->title,
+            $request->content,
+            now(),
+            $id
+        ]);
+        return redirect('post');
     }
 
     /**
