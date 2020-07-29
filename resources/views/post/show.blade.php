@@ -1,6 +1,6 @@
 @extends('template.master')
 @section('page-title')
-<title>Laravel-Blog</title>
+<title>文章內容</title>
 @endsection
 @section('main')
 <div class="container">
@@ -8,12 +8,15 @@
         @foreach($posts as $post)
         <div class="col-12">
             <h2>{{$post->title}}</h2>
-            <a href="{{route('post.show',['id'=>$post->id])}}">
-                檢視1
-            </a>
-            <a href="/post/{{$post->id}}">
-                檢視2
-            </a>
+            <div>
+                {{$post->content}}
+            </div>
+            <div>
+                建立時間:{{$post->created_at}}
+            </div>
+            <div>
+                最後更新時間:{{$post->updated_at}}
+            </div>
         </div>
         @endforeach
     </div>

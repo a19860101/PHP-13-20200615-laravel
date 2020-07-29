@@ -58,7 +58,8 @@ class PostController extends Controller
     public function show($id)
     {
         //
-        return 'post show'.$id;
+        $posts = DB::select("SELECT * FROM posts WHERE id = ?",[$id]);
+        return view('post.show',compact('posts'));
     }
 
 
