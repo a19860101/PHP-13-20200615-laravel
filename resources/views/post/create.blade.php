@@ -6,7 +6,8 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <form action="">
+            <form action="{{route('post.store')}}" method="post">
+                @csrf
                 <div class="form-group">
                     <label for="title">標題</label>
                     <input type="text" name="title" id="title" class="form-control">
