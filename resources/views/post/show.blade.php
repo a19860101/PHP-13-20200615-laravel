@@ -21,7 +21,7 @@
             <form action="{{route('post.destroy',['id'=>$post->id])}}" method="post" class="d-inline-block">
                 @csrf
                 @method('delete')
-                <input type="submit" class="btn btn-danger" value="刪除">
+                <input type="submit" class="btn btn-danger" value="刪除" onclick="return confirm('確認刪除？')">
             </form>
         </div>
         @endforeach
