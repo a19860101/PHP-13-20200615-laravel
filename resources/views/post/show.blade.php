@@ -23,6 +23,7 @@
                 @method('delete')
                 <input type="submit" class="btn btn-danger" value="刪除" onclick="return confirm('確認刪除？')">
             </form>
+            <a href="{{route('post.edit',['id'=>$post->id])}}" class="btn btn-info">編輯</a>
         </div>
         @endforeach
     </div>
