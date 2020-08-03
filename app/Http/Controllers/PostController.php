@@ -52,13 +52,16 @@ class PostController extends Controller
         // $post->save();
 
         //方法三
-        $post = new Post;
-        $post->fill([
-            'title' => $request->title,
-            'content'=>$request->content
-        ]);
-        $post->save();
-        return redirect('post');
+        // $post = new Post;
+        // $post->fill([
+        //     'title' => $request->title,
+        //     'content'=>$request->content
+        // ]);
+        // $post->save();
+        // return redirect('post');
+
+        // return $request->file('cover')->store('images','public');
+        return $request->file('cover')->storeAs('/public/images','001.jpg');
     }
 
     /**
