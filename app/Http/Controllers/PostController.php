@@ -70,6 +70,10 @@ class PostController extends Controller
     public function show(Post $post)
     {
         //
+        // $post = Post::where('id',$post->id)->first();
+        // $post = Post::find($post->id);
+        $post = Post::findOrFail($post->id);
+        return view('post.show',compact('post'));
     }
 
     /**
@@ -81,6 +85,8 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         //
+        $post = Post::findOrFail($post->id);
+        return view('post.edit',compact('post'));
     }
 
     /**
