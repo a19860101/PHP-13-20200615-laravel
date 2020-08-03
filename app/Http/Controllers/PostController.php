@@ -61,7 +61,10 @@ class PostController extends Controller
         // return redirect('post');
 
         // return $request->file('cover')->store('images','public');
-        return $request->file('cover')->storeAs('/public/images','001.jpg');
+        $cover_ext = $request->file('cover')->getClientOriginalExtension();
+        $cover_name = md5(time()).'.'.$cover_ext;
+        // $request->file('cover')->storeAs('/public/images',$cover_name);
+        return $request->file('cover')->storeAs('/public/images',$cover_name);
     }
 
     /**
