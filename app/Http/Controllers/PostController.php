@@ -40,12 +40,24 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $post = new Post;
-        $post->title = $request->title;
-        $post->content = $request->content;
-        $post->save();
+        //方法一
+        // $post = new Post;
+        // $post->title = $request->title;
+        // $post->content = $request->content;
+        // $post->save();
 
+        //方法二
+        // $post = new Post;
+        // $post->fill($request->all());
+        // $post->save();
+
+        //方法三
+        $post = new Post;
+        $post->fill([
+            'title' => $request->title,
+            'content'=>$request->content
+        ]);
+        $post->save();
         return redirect('post');
     }
 
