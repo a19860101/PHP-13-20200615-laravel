@@ -4,9 +4,10 @@
 @endsection
 @section('main')
 <div class="container">
-    <div class="row">
+    <div class="row justify-content-center">
         @foreach($posts as $post)
-        <div class="col-12">
+        <div class="col-8">
+            <img src="/storage/images/{{$post->cover}}" class="w-100">
             <h2>{{$post->title}}</h2>
             <a href="{{route('post.show',['id'=>$post->id])}}">
                 檢視1
