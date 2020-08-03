@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -131,7 +132,7 @@ class PostController extends Controller
         //
         // $post = Post::findOrFail($post->id);
         // $post->delete();
-
+        Storage::delete('public/images/'.$post->cover);
         Post::destroy($post->id);
 
         return redirect('post');
