@@ -28,4 +28,6 @@ php artisan make:seeder PostsTableSeeder
 #建立seeder
 php artisan db:seed
 #執行seeds
+php artisan make:factory PostFactory
+#建立Factory
 ```
