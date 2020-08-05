@@ -23,6 +23,14 @@
                 <input type="submit" class="btn btn-primary" value="送出">
             </form>
         </div>
+        
+        @if($errors -> any())
+        <div class="col-12">
+            @foreach($errors->all() as $error)
+                <div>{{$error}}</div>
+            @endforeach
+        </div>
+        @endif
     </div>
 </div>
 @endsection
