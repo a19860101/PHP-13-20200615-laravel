@@ -14,13 +14,14 @@ class PostsTableSeeder extends Seeder
         //
 
         Post::truncate();
-        for($i=0;$i<10;$i++){
-            Post::create([
-                'title'=>'標題'.$i,
-                'content'=>'內容'.$i,
-                'cover'=>'https://picsum.photos/id/'.$i.'/800/600'
-            ]);
-        }
+        factory(Post::class,10)->create();
+        // for($i=0;$i<10;$i++){
+        //     Post::create([
+        //         'title'=>'標題'.$i,
+        //         'content'=>'內容'.$i,
+        //         'cover'=>'https://picsum.photos/id/'.$i.'/800/600'
+        //     ]);
+        // }
         // Post::create([
         //     'title'=>'標題2',
         //     'content'=>'內容2',
