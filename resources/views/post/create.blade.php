@@ -10,7 +10,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="title">標題</label>
-                    <input type="text" name="title" id="title" class="form-control">
+                    <input type="text" name="title" id="title" class="form-control" value="{{old('title')}}">
                 </div>
                 <div class="form-group">
                     <label for="cover">封面圖片</label>
@@ -18,7 +18,7 @@
                 </div>
                 <div class="form-group">
                     <label for="content">內容</label>
-                    <textarea name="content" id="content" cols="30" rows="10" class="form-control"></textarea>
+                    <textarea name="content" id="content" cols="30" rows="10" class="form-control">{{old('content')}}</textarea>
                 </div>
                 <input type="submit" class="btn btn-primary" value="送出">
             </form>
