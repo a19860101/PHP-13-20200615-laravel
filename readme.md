@@ -23,4 +23,9 @@ php artisan migrate:rollback
 #回復Migration
 php artisan migrate:reset
 #重置Migration
+
+php artisan make:seeder PostsTableSeeder
+#建立seeder
+php artisan db:seed
+#執行seeds
 ```
