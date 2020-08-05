@@ -62,6 +62,15 @@ class PostController extends Controller
         // return redirect('post');
 
         // return $request->file('cover')->store('images','public');
+
+        //Validate
+        $request->validate([
+            'title'     => 'required | max:5',
+            'cover'     => 'required',
+            'content'   => 'required'
+        ]);
+
+
         $cover_ext = $request->file('cover')->getClientOriginalExtension();
         $cover_name = md5(time()).'.'.$cover_ext;
         $request->file('cover')->storeAs('/public/images',$cover_name);
