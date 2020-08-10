@@ -21,16 +21,16 @@ Route::get('/about',function(){
 Route::get('/service',function(){
     return view('service');
 });
-Route::resource('/post','PostController');
+Route::resource('/post','PostController')->middleware('auth');
 
 // Route::get('/trash','TrashController@index')->name('trash');
 // Route::get('/trash/restore/{id}','TrashController@restore')->name('trash.restore');
 // Route::delete('/trash/delete','TrashController@detroy')->name('trash.delete');
 
 Route::prefix('trash')->group(function(){
-    Route::get('/','TrashController@index')->name('trash.index');
-    Route::get('/restore/{id}','TrashController@restore')->name('trash.restore');
-    Route::delete('/delete','TrashController@destroy')->name('trash.delete');
+    Route::get('/','TrashController@index')->name('trash.index')->middleware('auth');
+    Route::get('/restore/{id}','TrashController@restore')->name('trash.restore')->middleware('auth');
+    Route::delete('/delete','TrashController@destroy')->name('trash.delete')->middleware('auth');
 });
 
 Auth::routes();

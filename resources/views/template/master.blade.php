@@ -14,6 +14,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
+    @auth
       <li class="nav-item active">
         <!-- <a class="nav-link" href="/post/create">新增</a> -->
         <a class="nav-link" href="{{route('post.create')}}">新增</a>
@@ -21,6 +22,7 @@
       <li class="nav-item">
         <a href="{{route('trash.index')}}" class="nav-link">垃圾桶</a>
       </li>
+    @endauth
     </ul>
     <ul class="navbar-nav ml-auto">
       <!-- Authentication Links -->
