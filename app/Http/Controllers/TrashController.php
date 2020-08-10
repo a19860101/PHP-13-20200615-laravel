@@ -12,4 +12,10 @@ class TrashController extends Controller
         $posts = Post::onlyTrashed()->get();
         return view('trash.index',compact('posts'));
     }
+    public function restore(){
+        return 'restore';
+    }
+    public function destroy(){
+        return 'destroy';
+    }
 }

@@ -12,6 +12,7 @@
                     <th>標題</th>
                     <th>建立時間</th>
                     <th>刪除時間</th>
+                    <th>動作</th>
                 </tr>
                 @foreach($posts as $post)
                 <tr>
@@ -19,6 +20,12 @@
                     <td>{{$post->title}}</td>
                     <td>{{$post->created_at}}</td>
                     <td>{{$post->deleted_at}}</td>
+                    <td>
+                        <a href="#" class="btn btn-info">還原</a>
+                        <form action="" class="d-inline-block">
+                            <input type="submit" class="btn btn-danger" value="移除">
+                        </form>
+                    </td>
                 </tr>
                 @endforeach
             </table>

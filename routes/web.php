@@ -23,4 +23,12 @@ Route::get('/service',function(){
 });
 Route::resource('/post','PostController');
 
-Route::get('/trash','TrashController@index')->name('trash');
+// Route::get('/trash','TrashController@index')->name('trash');
+// Route::get('/trash/restore/{id}','TrashController@restore')->name('trash.restore');
+// Route::delete('/trash/delete','TrashController@detroy')->name('trash.delete');
+
+Route::prefix('trash')->group(function(){
+    Route::get('/','TrashController@index')->name('trash.index');
+    Route::get('/restore/{id}','TrashController@restore')->name('trash.restore');
+    Route::delete('/delete','TrashController@detroy')->name('trash.delete');
+});
