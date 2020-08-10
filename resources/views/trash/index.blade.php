@@ -22,7 +22,7 @@
                     <td>{{$post->deleted_at}}</td>
                     <td>
                         <a href="{{route('trash.restore',['id'=>$post->id])}}" class="btn btn-info">還原</a>
-                        <form action="{{route('trash.delete',['id'=>$post->id])}}" class="d-inline-block" method="post">
+                        <form action="{{route('trash.delete',['id'=>$post->id,'cover'=>$post->cover])}}" class="d-inline-block" method="post">
                             @csrf
                             @method('delete')
                             <input type="submit" class="btn btn-danger" value="移除" onclick="return confirm('刪除後將無法還原。確定刪除？')">
