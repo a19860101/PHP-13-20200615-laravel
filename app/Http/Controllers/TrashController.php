@@ -10,6 +10,6 @@ class TrashController extends Controller
     //
     public function index(){
         $posts = Post::onlyTrashed()->get();
-        return $posts;
+        return view('trash.index',compact('posts'));
     }
 }

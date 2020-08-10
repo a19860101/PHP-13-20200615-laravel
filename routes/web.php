@@ -23,4 +23,4 @@ Route::get('/service',function(){
 });
 Route::resource('/post','PostController');
 
-Route::get('/trash','TrashController@index');
+Route::get('/trash','TrashController@index')->name('trash');

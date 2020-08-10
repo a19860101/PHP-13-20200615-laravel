@@ -18,6 +18,9 @@
         <!-- <a class="nav-link" href="/post/create">新增</a> -->
         <a class="nav-link" href="{{route('post.create')}}">新增</a>
       </li>
+      <li class="nav-item">
+        <a href="{{route('trash')}}" class="nav-link">垃圾桶</a>
+      </li>
     </ul>
   </div>
 </nav>
