@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -78,6 +79,7 @@ class PostController extends Controller
         $post = new Post;
         $post->fill($request->all());
         $post->cover = $cover_name;
+        $post->user_id = Auth::id();
         $post->save();
         return redirect('post');
     }
