@@ -30,5 +30,5 @@ Route::resource('/post','PostController');
 Route::prefix('trash')->group(function(){
     Route::get('/','TrashController@index')->name('trash.index');
     Route::get('/restore/{id}','TrashController@restore')->name('trash.restore');
-    Route::delete('/delete','TrashController@detroy')->name('trash.delete');
+    Route::delete('/delete','TrashController@destroy')->name('trash.delete');
 });
