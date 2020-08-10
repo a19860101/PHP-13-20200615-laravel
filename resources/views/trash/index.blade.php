@@ -21,7 +21,7 @@
                     <td>{{$post->created_at}}</td>
                     <td>{{$post->deleted_at}}</td>
                     <td>
-                        <a href="#" class="btn btn-info">還原</a>
+                        <a href="{{route('trash.restore',['id'=>$post->id])}}" class="btn btn-info">還原</a>
                         <form action="" class="d-inline-block">
                             <input type="submit" class="btn btn-danger" value="移除">
                         </form>

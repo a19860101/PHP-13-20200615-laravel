@@ -141,7 +141,7 @@ class PostController extends Controller
         //
         // $post = Post::findOrFail($post->id);
         // $post->delete();
-        Storage::delete('public/images/'.$post->cover);
+        // Storage::delete('public/images/'.$post->cover);
         Post::destroy($post->id);
 
         return redirect('post');
