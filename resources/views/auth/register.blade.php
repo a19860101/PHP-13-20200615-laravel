@@ -1,6 +1,8 @@
-@extends('layouts.app')
-
-@section('content')
+@extends('template.master')
+@section('page-title')
+<title>註冊</title>
+@endsection
+@section('main')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

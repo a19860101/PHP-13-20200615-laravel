@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('template.master')
 
-@section('content')
-<div class="container">
+@section('main')
+<div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <!-- You are logged in! -->
+                    您已經登入!!
                 </div>
             </div>
         </div>

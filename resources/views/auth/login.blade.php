@@ -1,5 +1,7 @@
 @extends('template.master')
-
+@section('page-title')
+<title>登入</title>
+@endsection
 @section('main')
 <div class="container py-5">
     <div class="row justify-content-center">
