@@ -32,3 +32,7 @@ Route::prefix('trash')->group(function(){
     Route::get('/restore/{id}','TrashController@restore')->name('trash.restore');
     Route::delete('/delete','TrashController@destroy')->name('trash.delete');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
