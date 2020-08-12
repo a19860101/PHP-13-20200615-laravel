@@ -22,6 +22,7 @@ Route::get('/service',function(){
     return view('service');
 });
 Route::resource('/post','PostController')->middleware('auth');
+Route::resource('/cate','CateController')->middleware('auth');
 
 // Route::get('/trash','TrashController@index')->name('trash');
 // Route::get('/trash/restore/{id}','TrashController@restore')->name('trash.restore');

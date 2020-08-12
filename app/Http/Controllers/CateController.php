@@ -15,6 +15,7 @@ class CateController extends Controller
     public function index()
     {
         //
+        return view('cate.index');
     }
 
     /**
