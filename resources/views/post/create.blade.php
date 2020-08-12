@@ -19,7 +19,9 @@
                 <div class="form-group">
                     <label for="cate_id"></label>
                     <select name="cate_id" id="cate_id" class="form-control">
-                        <option value=""></option>
+                        @foreach($cates as $cate)
+                        <option value="{{$cate->id}}">{{$cate->title}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-group">
