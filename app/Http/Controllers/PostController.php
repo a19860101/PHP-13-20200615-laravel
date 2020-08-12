@@ -68,7 +68,7 @@ class PostController extends Controller
 
         //Validate
         $request->validate([
-            'title'     => 'required | max:5',
+            'title'     => 'required | max:100',
             'cover'     => 'required',
             'content'   => 'required'
         ]);
@@ -82,8 +82,10 @@ class PostController extends Controller
         $post->fill($request->all());
         $post->cover = $cover_name;
         $post->user_id = Auth::id();
+        $post->cate_id = $request->cate_id;
         $post->save();
         return redirect('post');
+
     }
 
     /**
