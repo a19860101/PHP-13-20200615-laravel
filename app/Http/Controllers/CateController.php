@@ -38,8 +38,12 @@ class CateController extends Controller
     public function store(Request $request)
     {
         //
+        $cate = new Cate;
+        $cate->fill($request->all());
+        $cate->save();
 
-        
+        return redirect('cate');
+
     }
 
     /**
