@@ -10,6 +10,7 @@
             <img src="/storage/images/{{$post->cover}}" class="w-100">
             <div>作者:{{$post->user->name}}</div>
             <div>Mail:{{$post->user->email}}</div>
+            <div>分類: {{$post->cate->title}}</div>
             <h2>{{$post->title}}</h2>
             <a href="{{route('post.show',['id'=>$post->id])}}">
                 檢視1

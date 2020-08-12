@@ -17,4 +17,7 @@ class Post extends Model
         return $this->belongsTo('App\User');
     
     }
+    public function cate(){
+        return $this->belongsTo('App\Cate');
+    }
 }
