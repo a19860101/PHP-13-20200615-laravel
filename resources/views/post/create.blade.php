@@ -17,6 +17,12 @@
                     <input type="file" name="cover" id="cover">
                 </div>
                 <div class="form-group">
+                    <label for="cate_id"></label>
+                    <select name="cate_id" id="cate_id" class="form-control">
+                        <option value=""></option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="content">內容</label>
                     <textarea name="content" id="content" cols="30" rows="10" class="form-control">{{old('content')}}</textarea>
                 </div>
