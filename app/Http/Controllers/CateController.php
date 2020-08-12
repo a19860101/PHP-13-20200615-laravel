@@ -26,6 +26,7 @@ class CateController extends Controller
     public function create()
     {
         //
+        // return view('cate.create');
     }
 
     /**
@@ -37,6 +38,8 @@ class CateController extends Controller
     public function store(Request $request)
     {
         //
+
+        
     }
 
     /**
