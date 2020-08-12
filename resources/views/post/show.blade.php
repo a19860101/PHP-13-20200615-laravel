@@ -8,6 +8,9 @@
         <div class="col-12">
             <h2>{{$post->title}}</h2>
             <div>
+                作者: {{$post->user->name}}
+            </div>
+            <div>
                 {{$post->content}}
             </div>
             <div>
