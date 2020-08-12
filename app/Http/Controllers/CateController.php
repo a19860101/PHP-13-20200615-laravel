@@ -15,7 +15,8 @@ class CateController extends Controller
     public function index()
     {
         //
-        return view('cate.index');
+        $cates = Cate::all();
+        return view('cate.index',compact('cates'));
     }
 
     /**

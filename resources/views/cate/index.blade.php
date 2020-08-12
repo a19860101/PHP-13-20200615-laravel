@@ -22,7 +22,18 @@
         </div>
         <div class="col-md-4">
             <h2>分類列表</h2>
-            
+            <ul class="list-group">
+                @foreach($cates as $cate)
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{$cate->title}}
+                    <form action="" method="post">
+                        @csrf
+                        @method('post')
+                        <input type="submit" value="刪除" class="btn btn-danger" onclick="return confirm('確認刪除?')">
+                    </form>
+                </li>
+                @endforeach
+            </ul>
         </div>
     </div>
 </div>
