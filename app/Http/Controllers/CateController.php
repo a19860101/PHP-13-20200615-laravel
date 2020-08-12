@@ -90,5 +90,7 @@ class CateController extends Controller
     public function destroy(Cate $cate)
     {
         //
+        Cate::destroy($cate->id);
+        return redirect('cate');
     }
 }

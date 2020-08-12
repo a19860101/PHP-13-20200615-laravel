@@ -26,9 +26,9 @@
                 @foreach($cates as $cate)
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     {{$cate->title}}
-                    <form action="" method="post">
+                    <form action="{{route('cate.destroy',['id'=>$cate->id])}}" method="post">
                         @csrf
-                        @method('post')
+                        @method('delete')
                         <input type="submit" value="刪除" class="btn btn-danger" onclick="return confirm('確認刪除?')">
                     </form>
                 </li>
