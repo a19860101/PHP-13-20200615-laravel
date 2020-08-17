@@ -13,12 +13,10 @@
                     <label for="title">標題</label>
                     <input type="text" name="title" id="title" class="form-control" value="{{$post->title}}">
                 </div>
-                @foreach($post->tags as $tag)
-                    <div>{{$tag}}</div>
-                @endforeach
+                
                 <div class="form-group">
                     <label for="tag">標籤</label>
-                    <input type="text" name="tag" id="tag" class="form-control">
+                    <input type="text" name="tag" id="tag" class="form-control" value="{{$post->toTagString()}}">
                 </div>
                 <div class="form-group">
                     <label for="content">內容</label>
