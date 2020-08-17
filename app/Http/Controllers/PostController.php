@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\Cate;
+use App\Tag;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -67,24 +68,31 @@ class PostController extends Controller
         // return $request->file('cover')->store('images','public');
 
         //Validate
-        $request->validate([
-            'title'     => 'required | max:100',
-            'cover'     => 'required',
-            'content'   => 'required'
-        ]);
+        // $request->validate([
+        //     'title'     => 'required | max:100',
+        //     'cover'     => 'required',
+        //     'content'   => 'required'
+        // ]);
 
 
-        $cover_ext = $request->file('cover')->getClientOriginalExtension();
-        $cover_name = md5(time()).'.'.$cover_ext;
-        $request->file('cover')->storeAs('/public/images',$cover_name);
+        // $cover_ext = $request->file('cover')->getClientOriginalExtension();
+        // $cover_name = md5(time()).'.'.$cover_ext;
+        // $request->file('cover')->storeAs('/public/images',$cover_name);
 
-        $post = new Post;
-        $post->fill($request->all());
-        $post->cover = $cover_name;
-        $post->user_id = Auth::id();
-        $post->cate_id = $request->cate_id;
-        $post->save();
-        return redirect('post');
+        // $post = new Post;
+        // $post->fill($request->all());
+        // $post->cover = $cover_name;
+        // $post->user_id = Auth::id();
+        // $post->cate_id = $request->cate_id;
+        // $post->save();
+        // return redirect('post');
+        
+        $tags = explode(',',$request->tag);
+        foreach($tags as $tag){
+            $tagModel = Tag::firstOrCreate(['title'=> $tag]);
+            // $post->tags()->attach($tagModel->id);
+        }
+
 
     }
 
