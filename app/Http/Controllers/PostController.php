@@ -129,6 +129,7 @@ class PostController extends Controller
         //
         $post = Post::findOrFail($post->id);
         $post->fill($request->all());
+        $post->cate_id = $request->cate_id;
         // $post->fill([
         //     'title' => $request->title,
         //     'content'=> $request->content

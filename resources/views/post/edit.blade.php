@@ -21,7 +21,11 @@
                     <label for="cate_id"></label>
                     <select name="cate_id" id="cate_id" class="form-control">
                         @foreach($cates as $cate)
-                        <option value="{{$cate->id}}">{{$cate->title}}</option>
+                            @if($cate->id === $post->cate_id)
+                            <option value="{{$cate->id}}" selected>{{$cate->title}}</option>
+                            @else
+                            <option value="{{$cate->id}}">{{$cate->title}}</option>
+                            @endif
                         @endforeach
                     </select>
                 </div>
