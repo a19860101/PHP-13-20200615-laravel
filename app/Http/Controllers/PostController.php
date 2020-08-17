@@ -113,7 +113,8 @@ class PostController extends Controller
     {
         //
         $post = Post::findOrFail($post->id);
-        return view('post.edit',compact('post'));
+        $cates = Cate::all();
+        return view('post.edit',compact('post','cates'));
     }
 
     /**

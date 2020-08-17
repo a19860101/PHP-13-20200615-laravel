@@ -17,6 +17,14 @@
                     <label for="content">內容</label>
                     <textarea name="content" id="content" cols="30" rows="10" class="form-control">{{$post->content}}</textarea>
                 </div>
+                <div class="form-group">
+                    <label for="cate_id"></label>
+                    <select name="cate_id" id="cate_id" class="form-control">
+                        @foreach($cates as $cate)
+                        <option value="{{$cate->id}}">{{$cate->title}}</option>
+                        @endforeach
+                    </select>
+                </div>
                 <input type="submit" class="btn btn-primary" value="儲存">
                 <input type="button" class="btn btn-danger" value="取消" onclick="history.back()">
             </form>
