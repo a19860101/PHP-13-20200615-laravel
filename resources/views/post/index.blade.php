@@ -4,22 +4,27 @@
 @endsection
 @section('main')
 <div class="container">
-    <div class="row justify-content-center">
-        @foreach($posts as $post)
-        <div class="col-8">
+    @foreach($posts as $post)
+    <div class="row justify-content-center my-5 border p-5 align-items-center">
+        <div class="col-4">
             <img src="/storage/images/{{$post->cover}}" class="w-100">
-            <div>作者:{{$post->user->name}}</div>
-            <div>Mail:{{$post->user->email}}</div>
-            <div>分類: {{$post->cate->title}}</div>
-            <h2>{{$post->title}}</h2>
-            <a href="{{route('post.show',['id'=>$post->id])}}">
-                檢視1
-            </a>
-            <a href="/post/{{$post->id}}">
-                檢視2
-            </a>
         </div>
-        @endforeach
+        <div class="col-8">
+            <h2>{{$post->title}}</h2>
+            <div>分類: {{$post->cate->title}}</div>
+            <div>作者:{{$post->user->name}} / {{$post->user->email}}</div>
+            <a href="/post/{{$post->id}}">
+                <!-- 檢視2 -->
+            </a>
+            <a href="{{route('post.show',['id'=>$post->id])}}" class="btn btn-primary">
+                檢視
+            </a>
+            <div class="w-100 my-3"></div>
+            @foreach($post->tags as $tag)
+            <a href="#" class="btn btn-danger btn-sm">{{$tag->title}}</a>
+            @endforeach
+        </div>
     </div>
+    @endforeach
 </div>
 @endsection
