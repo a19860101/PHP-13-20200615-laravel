@@ -38,4 +38,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/posts/tag/{id}','PostTagController@postsWithTag')->name('postsTag');
+Route::get('/posts/tag/{tag}','PostTagController@postsWithTag')->name('postsTag');

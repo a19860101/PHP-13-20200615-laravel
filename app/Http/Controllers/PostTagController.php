@@ -9,8 +9,10 @@ class PostTagController extends Controller
 {
     //
 
-    function postsWithTag($id){
-        $tags = Tag::findOrFail($id);
-        return $tags;
+    public function postsWithTag(Tag $tag){       
+        $posts = $tag->posts;
+        // return $posts;
+        return $posts;
     }
+
 }
