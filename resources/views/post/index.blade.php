@@ -14,6 +14,9 @@
             <h2>{{$post->title}}</h2>
             <div>分類: {{$post->cate->title}}</div>
             <div>作者:{{$post->user->name}} / {{$post->user->email}}</div>
+            <div>
+                {{Str::limit($post->content,200)}}
+            </div>
             <a href="/post/{{$post->id}}">
                 <!-- 檢視2 -->
             </a>
