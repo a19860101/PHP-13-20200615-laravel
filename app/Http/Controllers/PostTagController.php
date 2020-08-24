@@ -12,7 +12,7 @@ class PostTagController extends Controller
     public function postsWithTag(Tag $tag){       
         $posts = $tag->posts;
         // return $posts;
-        return $posts;
+        return view('post.tag',compact('posts'));
     }
 
 }
