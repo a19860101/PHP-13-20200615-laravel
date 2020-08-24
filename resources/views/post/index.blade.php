@@ -4,6 +4,7 @@
 @endsection
 @section('main')
 <div class="container">
+
     @foreach($posts as $post)
     <div class="row justify-content-center my-5 border p-5 align-items-center">
         <div class="col-4">
