@@ -21,7 +21,7 @@
             </a>
             <div class="w-100 my-3"></div>
             @foreach($post->tags as $tag)
-            <a href="#" class="btn btn-danger btn-sm">{{$tag->title}}</a>
+            <a href="{{route('postsTag',['id'=>$tag->id])}}" class="btn btn-danger btn-sm">{{$tag->title}}</a>
             @endforeach
         </div>
     </div>
